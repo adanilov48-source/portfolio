@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Секреты: никогда не загружай на GitHub
+.env
+*.key
+*.pem
+secrets/

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Александр — веб-дизайнер</title>
+<meta name="description" content="Портфолио веб-дизайнера: сайты, мобильные приложения, графические постеры.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F7F9; --ink:#17203A; --muted:#5B6479; --line:#D5DAE4;
+  --accent:#2F4BFF; --sky:#DCE3FF; --mint:#D3F0E4; --sand:#F3E3C8;
+  --font:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--paper);color:var(--ink);line-height:1.6;font-size:1.0625rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0}
+nav a{text-decoration:none;font-weight:600;margin-left:1.5rem}
+nav a:first-child{margin-left:0}
+nav div a:hover{color:var(--accent)}
+
+/* Hero: имя внутри «фрейма», как в редакторе дизайна */
+.hero{padding:4rem 0 5rem}
+.frame{position:relative;border:2px solid var(--accent);padding:3rem 2.5rem;max-width:46rem}
+.frame::before,.frame::after,.frame i{content:"";position:absolute;width:12px;height:12px;background:#fff;border:2px solid var(--accent)}
+.frame::before{top:-7px;left:-7px}
+.frame::after{top:-7px;right:-7px}
+.frame i:nth-child(1){bottom:-7px;left:-7px}
+.frame i:nth-child(2){bottom:-7px;right:-7px}
+.size{position:absolute;bottom:-2.1rem;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:.8rem;padding:.15rem .6rem;border-radius:4px}
+h1{font-size:clamp(3rem,10vw,6.5rem);line-height:.95;font-weight:800;letter-spacing:-.03em}
+.lead{margin-top:1.5rem;max-width:34rem;color:var(--muted);font-size:1.2rem}
+.btn{display:inline-block;margin-top:2rem;background:var(--ink);color:#fff;padding:.8rem 1.4rem;border-radius:6px;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--accent)}
+
+h2{font-size:2rem;letter-spacing:-.02em;margin-bottom:1.5rem}
+section{padding:3rem 0;border-top:1px solid var(--line)}
+
+/* Работы: строки, а не одинаковые карточки */
+.work{display:grid;grid-template-columns:9rem 1fr;gap:1.5rem;align-items:center;padding:1.25rem 0;border-bottom:1px solid var(--line)}
+.work:last-child{border-bottom:0}
+.thumb{aspect-ratio:4/3;border-radius:10px;display:grid;place-items:center;font-size:.85rem;color:var(--muted)}
+.work h3{font-size:1.3rem}
+.work p{color:var(--muted)}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2rem}
+.skills h3{margin-bottom:.4rem}
+.skills p{color:var(--muted)}
+footer{padding:3rem 0 4rem;border-top:1px solid var(--line)}
+footer a{font-weight:600;color:var(--accent)}
+
+@media (max-width:34rem){
+  .frame{padding:2rem 1.25rem}
+  .work{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Основное меню">
+    <a href="#top">Александр</a>
+    <div><a href="#works">Работы</a><a href="#services">Услуги</a><a href="#contact">Контакты</a></div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="frame">
+      <i></i><i></i>
+      <h1>Александр</h1>
+      <p class="lead">Веб-дизайнер. Делаю сайты, дизайн мобильных приложений и графические постеры.</p>
+      <a class="btn" href="#contact">Обсудить проект</a>
+      <span class="size" aria-hidden="true">Веб-дизайнер · Вьетнам</span>
+    </div>
+  </header>
+
+  <section id="works">
+    <h2>Работы</h2>
+    <!-- ЗАМЕНИ: название, описание и цвет блока на свои проекты. Позже вместо .thumb вставишь <img src="images/имя.jpg" alt="описание"> -->
+    <article class="work">
+      <div class="thumb" style="background:var(--sky)">Скриншот</div>
+      <div><h3>Название проекта 1</h3><p>Сайт. Одна-две строки: задача, твоя роль, результат.</p></div>
+    </article>
+    <article class="work">
+      <div class="thumb" style="background:var(--mint)">Скриншот</div>
+      <div><h3>Название проекта 2</h3><p>Мобильное приложение. Что делал и для кого.</p></div>
+    </article>
+    <article class="work">
+      <div class="thumb" style="background:var(--sand)">Скриншот</div>
+      <div><h3>Название проекта 3</h3><p>Графический постер. Идея и формат.</p></div>
+    </article>
+  </section>
+
+  <section id="services">
+    <h2>Услуги</h2>
+    <div class="skills">
+      <div><h3>Сайты</h3><p>Лендинги и многостраничные сайты: структура, визуальный стиль, адаптация под телефон.</p></div>
+      <div><h3>Мобильные приложения</h3><p>Дизайн экранов и интерфейсов приложений.</p></div>
+      <div><h3>Графические постеры</h3><p>Афиши и промо-материалы для печати и соцсетей.</p></div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h2>Контакты</h2>
+    <!-- ЗАМЕНИ на свою почту и профили -->
+    <p><a href="mailto:your@email.com">your@email.com</a></p>
+  </footer>
+</div>
+</body>
+</html>
